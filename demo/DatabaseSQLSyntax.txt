@@ -1,0 +1,8 @@
+CREATE TABLE comment_text
+(
+comment_id int NOT NULL AUTO_INCREMENT,
+comment_p_name varchar(50) NOT NULL,
+comment_data varchar(200),
+comment_date varchar(40),
+PRIMARY KEY (comment_id)
+)

@@ -1,0 +1,43 @@
+<?php
+$con = mysql_connect("sql3.freesqldatabase.com:3306","sql339542","aQ6*cA1%");
+
+// Check connection
+if (!$con)
+  {
+  echo "Failed to connect to MySQL: " . mysql_error();
+  }
+
+mysql_select_db("sql339542",$con);
+
+  $result = mysql_query("SELECT * FROM comment_text");
+  
+ echo '<p>Name:'.$result['comment_p_name'].'</p>';
+ echo '<p>Date:'.$result['comment_date'].'</p>';
+ echo '<p>Comment'.$result['comment_data'].'</p>';
+
+?>
+
+
+
+<html>
+<body>
+
+<form action="http://localhost:8088/StockData/commentEntry.php" method="post">
+	<p>
+	Your name: </br>
+	<input type="text" name="comment_p_name" size="25" maxlenth="30"/>
+	</p>
+	<p>
+	Your comment: </br>
+	<textarea name="comment_data" rows="5" cols="40" maxlength="200"></textarea>
+	</p>
+	
+	<input type="submit">
+	
+</form>
+
+
+</body>
+
+
+</html>
